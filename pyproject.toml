@@ -1,0 +1,64 @@
+[build-system]
+# Minimum requirements for the build system to execute.
+requires = ["setuptools", "wheel"]  # PEP 508 specifications.
+
+[project]
+name = "coursetools"
+version = "1.0.0"
+description = "A Course Management Tool"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE.txt"}
+keywords = []
+authors = [
+  {email = "ryan.adams@instil.co"},
+  {name = "Ryan Adams"}
+]
+maintainers = [
+  {name = "Ryan Adams", email = "ryan.adams@instil.co"}
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python"
+]
+
+dependencies = [
+  "requests",
+  "selenium"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "pytest-cov[all]",
+  "black",
+  "pylint"
+]
+
+[project.urls]
+homepage = "https://example.com"
+documentation = "https://readthedocs.org"
+repository = "https://github.com"
+changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"
+
+[project.scripts]
+makerepo = "coursetools.repository:main"
+
+[tool.black]
+exclude = '''
+/(
+   \.direnv
+  |\.eggs
+  |\.git
+  |\.mypy_cache
+  |\.nox
+  |\.tox
+  |\.venv
+  |_build
+  |buck-out
+  |build
+  |dist
+  |cdk.out
+  |fixtures
+)/
+'''
