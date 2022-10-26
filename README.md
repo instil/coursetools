@@ -31,7 +31,7 @@ makerepo -l # Should list available templates
 You should also be able to do
 
 ```shell
-pipx install git+ssh//git@github.com:instil/coursetools.git
+pipx install git+ssh://git@github.com/instil/coursetools.git
 ```
 
 ## Configuration
