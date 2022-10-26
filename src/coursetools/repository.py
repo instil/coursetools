@@ -1,29 +1,29 @@
-import configparser
 from pathlib import Path
 from shutil import copytree, ignore_patterns
 
-training_repo = "/Users/ryan/Projects/training-repo"
+from coursetools.config import get_config
+from coursetools.templates import get_templates, load_template
 
 
-def main():
+def make_repo(course_template):
     """
-    Version 1 of my makerepo command
-    Copies the React TypeScript files from the training repo into the current directory.
+    Copies the files defined in the template from the training repo into the current directory.
+
+    course_template -- name of the template to run
     """
-    print("making a course react typescript repository")
-    config = configparser.ConfigParser()
-    template_file = (
-        Path(__file__).absolute().parent / ".." / "templates/typescript-react.ini"
-    )
-    print(template_file)
+    print(f"making a course using the {course_template} template")
+    if course_template not in get_templates():
+        print("Not a valid template")
+        return
 
-    config.read(template_file)
-    exclusion = list(config["excludes"])
+    template = load_template(course_template)
+    exclusion = list(template["excludes"])
+    training_repo = get_config("repo_root")
 
-    for key in config["paths"]:
+    for key in template["paths"]:
         copytree(
             f"{training_repo}{key}",
-            config["paths"][key],
+            Path(template["paths"][key]).resolve(),
             ignore=ignore_patterns(*exclusion),
             dirs_exist_ok=True,
         )

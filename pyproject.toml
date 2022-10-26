@@ -22,10 +22,7 @@ classifiers = [
   "Programming Language :: Python"
 ]
 
-dependencies = [
-  "requests",
-  "selenium"
-]
+dependencies = []
 
 [project.optional-dependencies]
 dev = [
@@ -36,13 +33,12 @@ dev = [
 ]
 
 [project.urls]
-homepage = "https://example.com"
-documentation = "https://readthedocs.org"
-repository = "https://github.com"
-changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"
+homepage = "https://instil.co"
+repository = "https://github.com/instil/coursetools"
+#changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"
 
 [project.scripts]
-makerepo = "coursetools.repository:main"
+makerepo = "coursetools.app:main"
 
 [tool.black]
 exclude = '''
