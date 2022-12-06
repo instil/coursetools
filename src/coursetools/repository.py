@@ -1,5 +1,5 @@
 from pathlib import Path
-from shutil import copytree, ignore_patterns
+from shutil import copytree, copy, ignore_patterns
 
 from coursetools.config import get_config
 from coursetools.templates import get_templates, load_template
@@ -21,11 +21,18 @@ def make_repo(course_template):
     training_repo = get_config("repo_root")
 
     for key in template["paths"]:
-        copytree(
-            f"{training_repo}{key}",
-            Path(template["paths"][key]).resolve(),
-            ignore=ignore_patterns(*exclusion),
-            dirs_exist_ok=True,
-        )
+        source = Path(f"{training_repo}{key}").resolve()
+        destination = Path(template["paths"][key]).resolve()
+        if source.is_dir():
+            copytree(
+                source,
+                destination,
+                ignore=ignore_patterns(*exclusion),
+                dirs_exist_ok=True,
+            )
+        elif source.is_file():
+            copy(source, destination)
+        else:
+            print(f"{key} is neither file or directory, skipping")
 
     return
