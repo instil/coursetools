@@ -63,41 +63,31 @@ class TestLoadTemplate:
         """Test that load_template returns a ConfigParser object."""
         # Temporarily override template_dir
         import coursetools.templates as templates_module
-        original_dir = templates_module.template_dir
         monkeypatch.setattr(templates_module, "template_dir", mock_template_dir)
         
         config = load_template("test-template")
         assert config is not None
         assert "paths" in config
         assert "excludes" in config
-        
-        # Restore original
-        monkeypatch.setattr(templates_module, "template_dir", original_dir)
     
     def test_load_template_has_correct_sections(self, mock_template_dir, monkeypatch):
         """Test that loaded template has expected sections."""
         import coursetools.templates as templates_module
-        original_dir = templates_module.template_dir
         monkeypatch.setattr(templates_module, "template_dir", mock_template_dir)
         
         config = load_template("test-template")
         assert "/test/path1" in config["paths"]
         assert "/test/path2" in config["paths"]
         assert "node_modules" in config["excludes"]
-        
-        monkeypatch.setattr(templates_module, "template_dir", original_dir)
     
     def test_load_template_reads_paths_correctly(self, mock_template_dir, monkeypatch):
         """Test that template paths are read correctly."""
         import coursetools.templates as templates_module
-        original_dir = templates_module.template_dir
         monkeypatch.setattr(templates_module, "template_dir", mock_template_dir)
         
         config = load_template("test-template")
         assert config["paths"]["/test/path1"] == "dest1"
         assert config["paths"]["/test/path2"] == "dest2"
-        
-        monkeypatch.setattr(templates_module, "template_dir", original_dir)
 
 
 class TestRealTemplates:
