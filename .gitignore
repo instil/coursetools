@@ -1,8 +1,11 @@
 .venv
 *.egg-info
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
 .pytest_cache/
 dist/
 build/
