@@ -1,6 +1,7 @@
 [build-system]
 # Minimum requirements for the build system to execute.
-requires = ["setuptools", "wheel"]  # PEP 508 specifications.
+requires = ["setuptools>=77", "wheel"]  # PEP 508 specifications.
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "coursetools"
@@ -8,7 +9,6 @@ version = "1.0.6"
 description = "A Course Management Tool"
 readme = "README.md"
 requires-python = ">=3.8"
-license = {file = "LICENSE.txt"}
 keywords = []
 authors = [
   {email = "ryan.adams@instil.co"},
@@ -26,10 +26,10 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = [
-  "pytest",
-  "pytest-cov[all]",
-  "black",
-  "pylint"
+  "pytest>=7.1",
+  "pytest-cov>=3.0",
+  "black>=22.6",
+  "pylint>=2.14"
 ]
 
 [project.urls]
@@ -58,3 +58,7 @@ exclude = '''
   |fixtures
 )/
 '''
+
+[tool.setuptools]
+# Enable package discovery
+packages = {find = {where = ["src"]}}

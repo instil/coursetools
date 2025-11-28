@@ -20,9 +20,7 @@ def get_templates():
 
 def load_template(template_file):
     config = configparser.ConfigParser()
-    template_file = (
-        template_dir / f"{template_file}.ini"
-    )
+    template_file = template_dir / f"{template_file}.ini"
     print(template_file)
 
     config.read(template_file)
