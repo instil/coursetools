@@ -1,4 +1,3 @@
-"""Unit tests for coursetools.repository module."""
 import os
 from pathlib import Path
 import configparser
@@ -8,17 +7,14 @@ from coursetools.repository import make_repo
 
 
 class TestMakeRepo:
-    """Tests for make_repo function."""
     
     def test_make_repo_with_invalid_template(self, capsys):
-        """Test make_repo with invalid template name."""
         make_repo("nonexistent-template")
         
         captured = capsys.readouterr()
         assert "Not a valid template" in captured.out
     
     def test_make_repo_with_valid_template_name(self, mock_config_dir, mock_template_dir, monkeypatch, capsys):
-        """Test make_repo with valid template name."""
         import coursetools.config as config_module
         import coursetools.templates as templates_module
         
@@ -35,7 +31,6 @@ class TestMakeRepo:
         assert "making a course using the test-template template" in captured.out
     
     def test_make_repo_checks_template_existence(self, capsys):
-        """Test that make_repo validates template exists."""
         result = make_repo("definitely-not-a-real-template")
         
         captured = capsys.readouterr()
@@ -43,7 +38,6 @@ class TestMakeRepo:
         assert result is None
     
     def test_make_repo_with_real_template(self, capsys):
-        """Test make_repo with a real template name."""
         # This will fail due to missing config, but tests template validation
         make_repo("python")
         
@@ -52,10 +46,8 @@ class TestMakeRepo:
 
 
 class TestMakeRepoFileOperations:
-    """Tests for make_repo file operations."""
     
     def test_make_repo_copies_directory(self, temp_dir, mock_config_dir, monkeypatch, capsys):
-        """Test that make_repo copies directories correctly."""
         import coursetools.config as config_module
         import coursetools.templates as templates_module
         
@@ -101,7 +93,6 @@ class TestMakeRepoFileOperations:
             os.chdir(original_cwd)
     
     def test_make_repo_copies_single_file(self, temp_dir, mock_config_dir, monkeypatch):
-        """Test that make_repo copies single files correctly."""
         import coursetools.config as config_module
         import coursetools.templates as templates_module
         
@@ -144,7 +135,6 @@ class TestMakeRepoFileOperations:
             os.chdir(original_cwd)
     
     def test_make_repo_respects_exclusions(self, temp_dir, mock_config_dir, monkeypatch):
-        """Test that make_repo respects exclusion patterns."""
         import coursetools.config as config_module
         import coursetools.templates as templates_module
         
@@ -195,7 +185,6 @@ class TestMakeRepoFileOperations:
             os.chdir(original_cwd)
     
     def test_make_repo_handles_nonexistent_source(self, temp_dir, mock_config_dir, monkeypatch, capsys):
-        """Test make_repo behavior with nonexistent source path."""
         import coursetools.config as config_module
         import coursetools.templates as templates_module
         

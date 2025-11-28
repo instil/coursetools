@@ -1,4 +1,3 @@
-"""Unit tests for coursetools.config module."""
 import os
 from pathlib import Path
 import configparser
@@ -7,10 +6,8 @@ from coursetools.config import load_config, get_config, CONFIG
 
 
 class TestLoadConfig:
-    """Tests for load_config function."""
     
     def test_load_config_sets_global_config(self, mock_config_dir, monkeypatch):
-        """Test that load_config sets the global CONFIG variable."""
         import coursetools.config as config_module
         
         # Mock Path.home() to return our test directory
@@ -24,7 +21,6 @@ class TestLoadConfig:
         assert isinstance(config_module.CONFIG, configparser.ConfigParser)
     
     def test_load_config_reads_from_home_directory(self, mock_config_dir, monkeypatch):
-        """Test that load_config reads from ~/.coursetools/config.ini."""
         import coursetools.config as config_module
         
         monkeypatch.setattr(Path, "home", lambda: mock_config_dir.parent)
@@ -35,7 +31,6 @@ class TestLoadConfig:
         assert "config" in config_module.CONFIG
     
     def test_load_config_with_missing_file(self, temp_dir, monkeypatch):
-        """Test load_config when config file doesn't exist."""
         import coursetools.config as config_module
         
         # Point to directory without config
@@ -48,10 +43,8 @@ class TestLoadConfig:
 
 
 class TestGetConfig:
-    """Tests for get_config function."""
     
     def test_get_config_returns_value(self, mock_config_dir, monkeypatch):
-        """Test that get_config returns correct value for existing key."""
         import coursetools.config as config_module
         
         monkeypatch.setattr(Path, "home", lambda: mock_config_dir.parent)
@@ -62,7 +55,6 @@ class TestGetConfig:
         assert "training-repo" in value
     
     def test_get_config_loads_config_if_not_loaded(self, mock_config_dir, monkeypatch):
-        """Test that get_config calls load_config if CONFIG is None."""
         import coursetools.config as config_module
         
         monkeypatch.setattr(Path, "home", lambda: mock_config_dir.parent)
@@ -73,7 +65,6 @@ class TestGetConfig:
         assert config_module.CONFIG is not None
     
     def test_get_config_returns_none_for_missing_key(self, mock_config_dir, monkeypatch):
-        """Test that get_config returns None for non-existent key."""
         import coursetools.config as config_module
         
         monkeypatch.setattr(Path, "home", lambda: mock_config_dir.parent)
@@ -83,7 +74,6 @@ class TestGetConfig:
         assert value is None
     
     def test_get_config_with_no_config_file(self, temp_dir, monkeypatch):
-        """Test get_config when no config file exists."""
         import coursetools.config as config_module
         
         monkeypatch.setattr(Path, "home", lambda: temp_dir)
@@ -95,7 +85,6 @@ class TestGetConfig:
             get_config("repo_root")
     
     def test_get_config_multiple_calls(self, mock_config_dir, monkeypatch):
-        """Test that get_config can be called multiple times."""
         import coursetools.config as config_module
         
         monkeypatch.setattr(Path, "home", lambda: mock_config_dir.parent)
@@ -109,10 +98,8 @@ class TestGetConfig:
 
 
 class TestConfigIntegration:
-    """Integration tests for config module."""
     
     def test_config_file_format(self, mock_config_dir, monkeypatch):
-        """Test that config file is in correct INI format."""
         import coursetools.config as config_module
         
         monkeypatch.setattr(Path, "home", lambda: mock_config_dir.parent)
@@ -124,7 +111,6 @@ class TestConfigIntegration:
         assert "repo_root" in config_module.CONFIG["config"]
     
     def test_config_values_are_strings(self, mock_config_dir, monkeypatch):
-        """Test that config values are returned as strings."""
         import coursetools.config as config_module
         
         monkeypatch.setattr(Path, "home", lambda: mock_config_dir.parent)

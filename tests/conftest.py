@@ -1,4 +1,3 @@
-"""Pytest configuration and fixtures for coursetools tests."""
 import os
 import tempfile
 from pathlib import Path
@@ -8,14 +7,12 @@ import configparser
 
 @pytest.fixture
 def temp_dir():
-    """Create a temporary directory for testing."""
     with tempfile.TemporaryDirectory() as tmpdir:
         yield Path(tmpdir)
 
 
 @pytest.fixture
 def mock_template_dir(temp_dir):
-    """Create a mock template directory with test templates."""
     template_dir = temp_dir / "templates"
     template_dir.mkdir()
     
@@ -49,7 +46,6 @@ def mock_template_dir(temp_dir):
 
 @pytest.fixture
 def mock_config_dir(temp_dir):
-    """Create a mock config directory with test configuration."""
     config_dir = temp_dir / ".coursetools"
     config_dir.mkdir()
     
@@ -67,7 +63,6 @@ def mock_config_dir(temp_dir):
 
 @pytest.fixture
 def mock_repo_structure(temp_dir):
-    """Create a mock training repository structure."""
     repo_root = temp_dir / "training-repo"
     repo_root.mkdir()
     
