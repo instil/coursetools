@@ -1,6 +1,6 @@
 [build-system]
 # Minimum requirements for the build system to execute.
-requires = ["setuptools>=61", "wheel"]  # PEP 508 specifications.
+requires = ["setuptools>=77", "wheel"]  # PEP 508 specifications.
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -9,7 +9,7 @@ version = "1.0.6"
 description = "A Course Management Tool"
 readme = "README.md"
 requires-python = ">=3.8"
-license = {file = "LICENSE"}
+license = "MIT"
 keywords = []
 authors = [
   {email = "ryan.adams@instil.co"},
@@ -63,7 +63,3 @@ exclude = '''
 [tool.setuptools]
 # Enable package discovery
 packages = {find = {where = ["src"]}}
-
-[tool.setuptools.package-data]
-# Include template files
-templates = ["*.ini"]
