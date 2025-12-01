@@ -1,4 +1,5 @@
 import argparse
+import sys
 
 from coursetools.repository import make_repo
 from coursetools.templates import get_templates
@@ -14,17 +15,21 @@ def show_templates():
         print(f"* {template}")
 
 
-def main():
+def parse_and_execute(argv):
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument("-l", "--list", action="store_const", const=True)
     parser.add_argument(
         "template", nargs="?", default=argparse.SUPPRESS, help="Use this template"
     )
 
-    namespace = parser.parse_args()
+    namespace = parser.parse_args(argv)
     if "list" in namespace and namespace.list:
         show_templates()
     elif "template" in namespace:
         make_repo(namespace.template)
     else:
         parser.print_help()
+
+
+def main():
+    parse_and_execute(sys.argv[1:])
