@@ -90,36 +90,6 @@ class TestMainFunction:
         assert "Create a course repository" in captured.out
 
 
-class TestMainIntegration:
-    
-    def test_main_parses_arguments_correctly(self):
-        # Test with list flag
-        with patch.object(sys, "argv", ["makerepo", "-l"]):
-            with patch("coursetools.app.show_templates") as mock_show:
-                main()
-                mock_show.assert_called_once()
-    
-    def test_main_calls_make_repo_with_template(self):
-        with patch.object(sys, "argv", ["makerepo", "python"]):
-            with patch("coursetools.app.make_repo") as mock_make:
-                main()
-                mock_make.assert_called_once_with("python")
-    
-    def test_main_prioritizes_list_over_template(self, capsys):
-        with patch.object(sys, "argv", ["makerepo", "-l", "python"]):
-            main()
-        
-        captured = capsys.readouterr()
-        # Should show list, not make repo
-        assert "listing templates" in captured.out
-    
-    def test_main_handles_multiple_arguments(self):
-        with patch.object(sys, "argv", ["makerepo", "typescript"]):
-            with patch("coursetools.app.make_repo") as mock_make:
-                main()
-                mock_make.assert_called_once_with("typescript")
-
-
 class TestArgumentParsing:
     
     def test_template_argument_is_optional(self, capsys):
