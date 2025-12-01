@@ -55,6 +55,43 @@ def create_directory_structure(base_path, structure):
             path.write_text(content)
 
 
+def create_mock_template(temp_dir, monkeypatch, template_name, paths, excludes):
+    """Create a mock template configuration and patch the templates module.
+    
+    Args:
+        temp_dir: The temporary directory path
+        monkeypatch: The pytest monkeypatch fixture
+        template_name: The name of the template (without .ini extension)
+        paths: Dictionary of paths for the template config
+        excludes: Dictionary of excludes for the template config
+    
+    Example:
+        create_mock_template(
+            temp_dir, monkeypatch, "test-copy",
+            paths={"/test-source": "dest"},
+            excludes={"*.old": ""}
+        )
+    """
+    import coursetools.templates as templates_module
+    
+    # Create template directory
+    template_dir = temp_dir / "templates"
+    template_dir.mkdir(exist_ok=True)
+    monkeypatch.setattr(templates_module, "template_dir", template_dir)
+    
+    # Create template file
+    test_template = template_dir / f"{template_name}.ini"
+    config = configparser.ConfigParser()
+    config["paths"] = paths
+    config["excludes"] = excludes
+    
+    with open(test_template, "w") as f:
+        config.write(f)
+    
+    # Patch templates list
+    monkeypatch.setattr(templates_module, "templates", [template_name])
+
+
 @pytest.fixture
 def temp_dir():
     with tempfile.TemporaryDirectory() as tmpdir:

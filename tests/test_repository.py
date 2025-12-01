@@ -4,7 +4,7 @@ import configparser
 import pytest
 from unittest.mock import patch, MagicMock
 from coursetools.repository import make_repo
-from tests import run_in_temporary_directory, create_directory_structure
+from tests import run_in_temporary_directory, create_directory_structure, create_mock_template
 
 
 class TestMakeRepo:
@@ -50,7 +50,6 @@ class TestMakeRepoFileOperations:
     
     def test_make_repo_copies_directory(self, temp_dir, mock_config_dir, monkeypatch, capsys):
         import coursetools.config as config_module
-        import coursetools.templates as templates_module
         
         # Setup config
         monkeypatch.setattr(Path, "home", lambda: mock_config_dir.parent)
@@ -67,19 +66,11 @@ class TestMakeRepoFileOperations:
         })
         
         # Create template
-        template_dir = temp_dir / "templates"
-        template_dir.mkdir()
-        monkeypatch.setattr(templates_module, "template_dir", template_dir)
-        
-        test_template = template_dir / "test-copy.ini"
-        config = configparser.ConfigParser()
-        config["paths"] = {"/test-source": "dest"}
-        config["excludes"] = {"*.old": ""}
-        
-        with open(test_template, "w") as f:
-            config.write(f)
-        
-        monkeypatch.setattr(templates_module, "templates", ["test-copy"])
+        create_mock_template(
+            temp_dir, monkeypatch, "test-copy",
+            paths={"/test-source": "dest"},
+            excludes={"*.old": ""}
+        )
         
         def act_and_assert():
             make_repo("test-copy")
@@ -94,7 +85,6 @@ class TestMakeRepoFileOperations:
     
     def test_make_repo_copies_single_file(self, temp_dir, mock_config_dir, monkeypatch):
         import coursetools.config as config_module
-        import coursetools.templates as templates_module
         
         # Setup config
         monkeypatch.setattr(Path, "home", lambda: mock_config_dir.parent)
@@ -108,19 +98,11 @@ class TestMakeRepoFileOperations:
         })
         
         # Create template
-        template_dir = temp_dir / "templates"
-        template_dir.mkdir()
-        monkeypatch.setattr(templates_module, "template_dir", template_dir)
-        
-        test_template = template_dir / "test-file-copy.ini"
-        config = configparser.ConfigParser()
-        config["paths"] = {"/test-file.txt": "output-file.txt"}
-        config["excludes"] = {}
-        
-        with open(test_template, "w") as f:
-            config.write(f)
-        
-        monkeypatch.setattr(templates_module, "templates", ["test-file-copy"])
+        create_mock_template(
+            temp_dir, monkeypatch, "test-file-copy",
+            paths={"/test-file.txt": "output-file.txt"},
+            excludes={}
+        )
         
         def act_and_assert():
             make_repo("test-file-copy")
@@ -134,7 +116,6 @@ class TestMakeRepoFileOperations:
     
     def test_make_repo_respects_exclusions(self, temp_dir, mock_config_dir, monkeypatch):
         import coursetools.config as config_module
-        import coursetools.templates as templates_module
         
         # Setup config
         monkeypatch.setattr(Path, "home", lambda: mock_config_dir.parent)
@@ -154,19 +135,11 @@ class TestMakeRepoFileOperations:
         })
         
         # Create template with exclusions
-        template_dir = temp_dir / "templates"
-        template_dir.mkdir()
-        monkeypatch.setattr(templates_module, "template_dir", template_dir)
-        
-        test_template = template_dir / "test-exclusion.ini"
-        config = configparser.ConfigParser()
-        config["paths"] = {"/test-exclusion": "output"}
-        config["excludes"] = {"*.old": "", "node_modules": ""}
-        
-        with open(test_template, "w") as f:
-            config.write(f)
-        
-        monkeypatch.setattr(templates_module, "templates", ["test-exclusion"])
+        create_mock_template(
+            temp_dir, monkeypatch, "test-exclusion",
+            paths={"/test-exclusion": "output"},
+            excludes={"*.old": "", "node_modules": ""}
+        )
         
         def act_and_assert():
             make_repo("test-exclusion")
@@ -182,26 +155,17 @@ class TestMakeRepoFileOperations:
     
     def test_make_repo_handles_nonexistent_source(self, temp_dir, mock_config_dir, monkeypatch, capsys):
         import coursetools.config as config_module
-        import coursetools.templates as templates_module
         
         # Setup config
         monkeypatch.setattr(Path, "home", lambda: mock_config_dir.parent)
         config_module.CONFIG = None
         
         # Create template pointing to nonexistent source
-        template_dir = temp_dir / "templates"
-        template_dir.mkdir()
-        monkeypatch.setattr(templates_module, "template_dir", template_dir)
-        
-        test_template = template_dir / "test-missing.ini"
-        config = configparser.ConfigParser()
-        config["paths"] = {"/nonexistent-path": "output"}
-        config["excludes"] = {}
-        
-        with open(test_template, "w") as f:
-            config.write(f)
-        
-        monkeypatch.setattr(templates_module, "templates", ["test-missing"])
+        create_mock_template(
+            temp_dir, monkeypatch, "test-missing",
+            paths={"/nonexistent-path": "output"},
+            excludes={}
+        )
         
         def act_and_assert():
             make_repo("test-missing")
