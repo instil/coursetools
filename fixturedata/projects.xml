@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projects type="array">
+    <project>
+        <project-id type="integer">239023</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">46</icon>
+        <name>instil-software</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>instil-software</permalink>
+        <disk-usage type="integer">0</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">239069</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">56</icon>
+        <name>Fast Track to Java for .NET Developers - CME - October 2024</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>fast-track-to-java-for-net-developers-cme-october-2024</permalink>
+        <disk-usage type="integer">17344</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">239097</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>Kotlin and Android Development - BMW - October 2024</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>kotlin-and-android-development-bmw-october-2024</permalink>
+        <disk-usage type="integer">12288</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">239125</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>Introduction to TypeScript - LIT - October 2024</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>introduction-to-typescript-lit-october-2024</permalink>
+        <disk-usage type="integer">840</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">239127</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>Visibility Check</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>active</status>
+        <permalink>visibility-check</permalink>
+        <disk-usage type="integer">0</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">239161</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>Ansible - CME - October 2024</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>ansible-cme-october-2024</permalink>
+        <disk-usage type="integer">644</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">239201</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>AWS - Ontario - November 2024</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>aws-ontario-november-2024</permalink>
+        <disk-usage type="integer">984</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">239203</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>Testing Excellence - LIT - October 2024</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>testing-excellence-lit-october-2024</permalink>
+        <disk-usage type="integer">3568</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">239277</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>Security by Design - B-Secur - November 2024</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>security-by-design-b-secur-november-2024</permalink>
+        <disk-usage type="integer">440</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">239325</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>Engineering Best Practices - example</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>engineering-best-practices-example</permalink>
+        <disk-usage type="integer">380</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">239405</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>React Fundamentals - LIT - Dec 2024</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>react-fundamentals-lit-dec-2024</permalink>
+        <disk-usage type="integer">5396</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">239453</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>Python for Cloud - Liberty IT - December 2024</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>python-for-cloud-liberty-it-december-2024</permalink>
+        <disk-usage type="integer">1676</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">239601</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>Adoreboard - Introduction to Terraform</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>adoreboard-introduction-to-terraform</permalink>
+        <disk-usage type="integer">50220</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">239653</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">76</icon>
+        <name>Cloud Specialist Python - Liberty IT - January 2025</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>cloud-specialist-python-liberty-it-january-2025</permalink>
+        <disk-usage type="integer">8516</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">239759</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">25</icon>
+        <name>TypeScript For AWS Serverless - Liberty IT - Feb 2025</name>
+        <overview nil="true"/>
+        <start-page>repositories</start-page>
+        <status>archived</status>
+        <permalink>typescript-for-aws-serverless-lit-feb-25</permalink>
+        <disk-usage type="integer">3836</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">239941</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>Coding Excellence - Liberty IT - Mar 2025</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>coding-excellence-liberty-it-mar-2025</permalink>
+        <disk-usage type="integer">4436</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">240073</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">56</icon>
+        <name>Introduction to React - Liberty IT - April 2025</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>introduction-to-react-liberty-it-april-2025</permalink>
+        <disk-usage type="integer">9260</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">240381</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">31</icon>
+        <name>Introduction to Angular - Instil - June 25</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>introduction-to-angular-instil-june-25</permalink>
+        <disk-usage type="integer">12636</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">240403</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">65</icon>
+        <name>Engineering Best Practices - Deloitte - June 25</name>
+        <overview nil="true"/>
+        <start-page>repositories</start-page>
+        <status>archived</status>
+        <permalink>engineering-best-practices-deloitte-june-25</permalink>
+        <disk-usage type="integer">8084</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">240699</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>Instil - New Starts August 2025</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>instil-new-starts-august-2025</permalink>
+        <disk-usage type="integer">6100</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">240721</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">56</icon>
+        <name>Frisbii - Java and Spring - August 2025</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>frisbii-java-and-spring-august-2025</permalink>
+        <disk-usage type="integer">12004</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">240735</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>CME - Fast Track to Java for Interns - August 2025</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>cme-fast-track-to-java-for-interns-august-2025</permalink>
+        <disk-usage type="integer">7212</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">240813</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">21</icon>
+        <name>Fasttrack to DotNet - Everway - September 2025</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>fasttrack-to-dotnet-everway-september-2025</permalink>
+        <disk-usage type="integer">3142</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">240845</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>LIT - React Fundamentals - September 25</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>lit-react-fundamentals-september-25</permalink>
+        <disk-usage type="integer">2548</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">240875</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>TypeScript, React and AWS - HALOS Bodycams - September 2025</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>typescript-react-and-aws-halos-bodycams-september-2025</permalink>
+        <disk-usage type="integer">6552</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">240929</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>CME - Graduate Academy - Autumn 2025</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>active</status>
+        <permalink>cme-graduate-academy-autumn-2025</permalink>
+        <disk-usage type="integer">56112</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">240933</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>LIT - Python from the ground up - September 2025</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>archived</status>
+        <permalink>lit-python-from-the-ground-up-september-2025</permalink>
+        <disk-usage type="integer">10512</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">240981</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>Apex - Prompt Engineering - October 2025</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>active</status>
+        <permalink>apex-prompt-engineering-october-2025</permalink>
+        <disk-usage type="integer">4816</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">241071</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">14</icon>
+        <name>Payroc - Fasttrack to DotNet - November 2025</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>active</status>
+        <permalink>payroc-fasttrack-to-dotnet-november-2025</permalink>
+        <disk-usage type="integer">5428</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">241109</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>Payroc - Engineering Best Practices November-25</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>active</status>
+        <permalink>payroc-engineering-best-practices-november-25</permalink>
+        <disk-usage type="integer">3804</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">241157</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>Payroc - Engineering Best Practices December-2</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>active</status>
+        <permalink>payroc-engineering-best-practices-december-2</permalink>
+        <disk-usage type="integer">44</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+    <project>
+        <project-id type="integer">241171</project-id>
+        <account-name>Instil Software</account-name>
+        <group-id></group-id>
+        <icon type="integer">1</icon>
+        <name>Payroc - Engineering Best Practices December-4</name>
+        <overview nil="true"/>
+        <start-page>overview</start-page>
+        <status>active</status>
+        <permalink>payroc-engineering-best-practices-december-4</permalink>
+        <disk-usage type="integer">44</disk-usage>
+        <total-tickets type="integer">0</total-tickets>
+        <open-tickets type="integer">0</open-tickets>
+        <closed-tickets type="integer">0</closed-tickets>
+    </project>
+</projects>
