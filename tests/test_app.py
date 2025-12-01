@@ -1,3 +1,4 @@
+import os
 import sys
 import pytest
 from unittest.mock import patch, MagicMock
@@ -49,18 +50,23 @@ class TestMainFunction:
         captured = capsys.readouterr()
         assert "listing templates" in captured.out
     
-    def test_main_with_template_argument(self, capsys):
-        with patch.object(sys, "argv", ["makerepo", "python"]):
-            # This will fail when no config file exists (CONFIG is None)
-            # but we can verify the initial message is printed
-            try:
-                main()
-            except TypeError:
-                # Expected when no config file exists
-                pass
-        
-        captured = capsys.readouterr()
-        assert "making a course using the python template" in captured.out
+    def test_main_with_template_argument(self, capsys, temp_dir):
+        original_cwd = os.getcwd()
+        try:
+            os.chdir(temp_dir)
+            with patch.object(sys, "argv", ["makerepo", "python"]):
+                # This will fail when no config file exists (CONFIG is None)
+                # but we can verify the initial message is printed
+                try:
+                    main()
+                except TypeError:
+                    # Expected when no config file exists
+                    pass
+            
+            captured = capsys.readouterr()
+            assert "making a course using the python template" in captured.out
+        finally:
+            os.chdir(original_cwd)
     
     def test_main_with_invalid_template(self, capsys):
         with patch.object(sys, "argv", ["makerepo", "nonexistent-template"]):
