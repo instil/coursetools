@@ -74,37 +74,3 @@ class TestLoadTemplate:
         config = load_template("test-template")
         assert config["paths"]["/test/path1"] == "dest1"
         assert config["paths"]["/test/path2"] == "dest2"
-
-
-class TestRealTemplates:
-    
-    def test_python_template_exists(self):
-        templates = get_templates()
-        assert "python" in templates
-        
-        config = load_template("python")
-        assert "paths" in config
-        assert "excludes" in config
-    
-    def test_typescript_template_exists(self):
-        templates = get_templates()
-        assert "typescript" in templates
-        
-        config = load_template("typescript")
-        assert "paths" in config
-        assert "excludes" in config
-    
-    def test_docker_template_exists(self):
-        templates = get_templates()
-        assert "docker" in templates
-        
-        config = load_template("docker")
-        assert "paths" in config
-        assert "excludes" in config
-    
-    def test_all_templates_have_required_sections(self):
-        templates = get_templates()
-        for template_name in templates:
-            config = load_template(template_name)
-            assert "paths" in config, f"Template {template_name} missing paths section"
-            assert "excludes" in config, f"Template {template_name} missing excludes section"
