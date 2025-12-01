@@ -20,6 +20,41 @@ def run_in_temporary_directory(act_and_assert, temp_dir):
         os.chdir(original_cwd)
 
 
+def create_directory_structure(base_path, structure):
+    """Create a directory structure from a nested dictionary.
+    
+    Args:
+        base_path: The base path where the structure should be created
+        structure: A dictionary where:
+            - If the value is a dict, the key is a directory name
+            - If the value is a string, the key is a file name and value is content
+    
+    Example:
+        structure = {
+            "training-repo": {
+                "test-source": {
+                    "file1.txt": "Content 1",
+                    "file2.txt": "Content 2"
+                }
+            }
+        }
+    """
+    base = Path(base_path)
+    
+    for name, content in structure.items():
+        path = base / name
+        
+        if isinstance(content, dict):
+            # It's a directory
+            path.mkdir(parents=True, exist_ok=True)
+            # Recursively create subdirectories and files
+            create_directory_structure(path, content)
+        else:
+            # It's a file
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(content)
+
+
 @pytest.fixture
 def temp_dir():
     with tempfile.TemporaryDirectory() as tmpdir:

@@ -4,7 +4,7 @@ import configparser
 import pytest
 from unittest.mock import patch, MagicMock
 from coursetools.repository import make_repo
-from tests import run_in_temporary_directory
+from tests import run_in_temporary_directory, create_directory_structure
 
 
 class TestMakeRepo:
@@ -57,12 +57,14 @@ class TestMakeRepoFileOperations:
         config_module.CONFIG = None
         
         # Create source directory
-        repo_root = temp_dir / "training-repo"
-        repo_root.mkdir()
-        source_dir = repo_root / "test-source"
-        source_dir.mkdir()
-        (source_dir / "file1.txt").write_text("Content 1")
-        (source_dir / "file2.txt").write_text("Content 2")
+        create_directory_structure(temp_dir, {
+            "training-repo": {
+                "test-source": {
+                    "file1.txt": "Content 1",
+                    "file2.txt": "Content 2"
+                }
+            }
+        })
         
         # Create template
         template_dir = temp_dir / "templates"
@@ -99,10 +101,11 @@ class TestMakeRepoFileOperations:
         config_module.CONFIG = None
         
         # Create source file
-        repo_root = temp_dir / "training-repo"
-        repo_root.mkdir()
-        source_file = repo_root / "test-file.txt"
-        source_file.write_text("Test content")
+        create_directory_structure(temp_dir, {
+            "training-repo": {
+                "test-file.txt": "Test content"
+            }
+        })
         
         # Create template
         template_dir = temp_dir / "templates"
@@ -138,16 +141,17 @@ class TestMakeRepoFileOperations:
         config_module.CONFIG = None
         
         # Create source directory with files to exclude
-        repo_root = temp_dir / "training-repo"
-        repo_root.mkdir()
-        source_dir = repo_root / "test-exclusion"
-        source_dir.mkdir()
-        (source_dir / "keep.txt").write_text("Keep this")
-        (source_dir / "exclude.old").write_text("Exclude this")
-        
-        node_modules = source_dir / "node_modules"
-        node_modules.mkdir()
-        (node_modules / "package.json").write_text("{}")
+        create_directory_structure(temp_dir, {
+            "training-repo": {
+                "test-exclusion": {
+                    "keep.txt": "Keep this",
+                    "exclude.old": "Exclude this",
+                    "node_modules": {
+                        "package.json": "{}"
+                    }
+                }
+            }
+        })
         
         # Create template with exclusions
         template_dir = temp_dir / "templates"
