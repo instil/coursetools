@@ -44,3 +44,21 @@ Put it at `~/.coursetools/config.ini` and put this content in it:
 [config]
 repo_root = /Users/ryan/Projects/training-repo
 ```
+
+## Testing
+
+This project includes a comprehensive test suite using pytest. To run the tests:
+
+```shell
+# Install development dependencies
+pip install -e .[dev]
+
+# Run tests
+pytest
+
+# Run tests with coverage
+pytest --cov=coursetools --cov-report=term-missing
+```
+
+For more information about the test suite, see [tests/README.md](tests/README.md).
+
