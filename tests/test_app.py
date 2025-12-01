@@ -3,6 +3,7 @@ import sys
 import pytest
 from unittest.mock import patch, MagicMock
 from coursetools.app import show_templates, main
+from tests import run_in_temporary_directory
 
 
 class TestShowTemplates:
@@ -51,9 +52,7 @@ class TestMainFunction:
         assert "listing templates" in captured.out
     
     def test_main_with_template_argument(self, capsys, temp_dir):
-        original_cwd = os.getcwd()
-        try:
-            os.chdir(temp_dir)
+        def act_and_assert():
             with patch.object(sys, "argv", ["makerepo", "python"]):
                 # This will fail when no config file exists (CONFIG is None)
                 # but we can verify the initial message is printed
@@ -65,8 +64,8 @@ class TestMainFunction:
             
             captured = capsys.readouterr()
             assert "making a course using the python template" in captured.out
-        finally:
-            os.chdir(original_cwd)
+        
+        run_in_temporary_directory(act_and_assert, temp_dir)
     
     def test_main_with_invalid_template(self, capsys):
         with patch.object(sys, "argv", ["makerepo", "nonexistent-template"]):

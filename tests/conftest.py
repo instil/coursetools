@@ -5,6 +5,21 @@ import pytest
 import configparser
 
 
+def run_in_temporary_directory(act_and_assert, temp_dir):
+    """Execute a callable in a temporary directory and restore the original directory.
+    
+    Args:
+        act_and_assert: A callable that performs actions and assertions
+        temp_dir: The temporary directory path to change to
+    """
+    original_cwd = os.getcwd()
+    try:
+        os.chdir(temp_dir)
+        act_and_assert()
+    finally:
+        os.chdir(original_cwd)
+
+
 @pytest.fixture
 def temp_dir():
     with tempfile.TemporaryDirectory() as tmpdir:

@@ -4,6 +4,7 @@ import configparser
 import pytest
 from unittest.mock import patch, MagicMock
 from coursetools.repository import make_repo
+from tests import run_in_temporary_directory
 
 
 class TestMakeRepo:
@@ -78,10 +79,7 @@ class TestMakeRepoFileOperations:
         
         monkeypatch.setattr(templates_module, "templates", ["test-copy"])
         
-        # Run make_repo in temp directory
-        original_cwd = os.getcwd()
-        try:
-            os.chdir(temp_dir)
+        def act_and_assert():
             make_repo("test-copy")
             
             # Check destination exists
@@ -89,8 +87,8 @@ class TestMakeRepoFileOperations:
             assert dest_dir.exists()
             assert (dest_dir / "file1.txt").exists()
             assert (dest_dir / "file2.txt").exists()
-        finally:
-            os.chdir(original_cwd)
+        
+        run_in_temporary_directory(act_and_assert, temp_dir)
     
     def test_make_repo_copies_single_file(self, temp_dir, mock_config_dir, monkeypatch):
         import coursetools.config as config_module
@@ -121,18 +119,15 @@ class TestMakeRepoFileOperations:
         
         monkeypatch.setattr(templates_module, "templates", ["test-file-copy"])
         
-        # Run make_repo
-        original_cwd = os.getcwd()
-        try:
-            os.chdir(temp_dir)
+        def act_and_assert():
             make_repo("test-file-copy")
             
             # Check file was copied
             dest_file = temp_dir / "output-file.txt"
             assert dest_file.exists()
             assert dest_file.read_text() == "Test content"
-        finally:
-            os.chdir(original_cwd)
+        
+        run_in_temporary_directory(act_and_assert, temp_dir)
     
     def test_make_repo_respects_exclusions(self, temp_dir, mock_config_dir, monkeypatch):
         import coursetools.config as config_module
@@ -169,10 +164,7 @@ class TestMakeRepoFileOperations:
         
         monkeypatch.setattr(templates_module, "templates", ["test-exclusion"])
         
-        # Run make_repo
-        original_cwd = os.getcwd()
-        try:
-            os.chdir(temp_dir)
+        def act_and_assert():
             make_repo("test-exclusion")
             
             # Check correct files exist
@@ -181,8 +173,8 @@ class TestMakeRepoFileOperations:
             assert (dest_dir / "keep.txt").exists()
             assert not (dest_dir / "exclude.old").exists()
             assert not (dest_dir / "node_modules").exists()
-        finally:
-            os.chdir(original_cwd)
+        
+        run_in_temporary_directory(act_and_assert, temp_dir)
     
     def test_make_repo_handles_nonexistent_source(self, temp_dir, mock_config_dir, monkeypatch, capsys):
         import coursetools.config as config_module
@@ -207,13 +199,10 @@ class TestMakeRepoFileOperations:
         
         monkeypatch.setattr(templates_module, "templates", ["test-missing"])
         
-        # Run make_repo
-        original_cwd = os.getcwd()
-        try:
-            os.chdir(temp_dir)
+        def act_and_assert():
             make_repo("test-missing")
             
             captured = capsys.readouterr()
             assert "neither file or directory" in captured.out
-        finally:
-            os.chdir(original_cwd)
+        
+        run_in_temporary_directory(act_and_assert, temp_dir)
